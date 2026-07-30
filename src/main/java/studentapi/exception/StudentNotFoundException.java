@@ -1,4 +1,4 @@
-package studentapi;
+package studentapi.exception;
 
 public class StudentNotFoundException extends RuntimeException {
 

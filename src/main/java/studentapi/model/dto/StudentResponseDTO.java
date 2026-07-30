@@ -1,35 +1,24 @@
-package studentapi;
+package studentapi.model.dto;
 
-import jakarta.persistence.*;
+import java.util.List;
 
-@Entity
-@Table(name = "students")
-public class Student {
+public class StudentResponseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String name;
     private String rollNumber;
     private int marks;
+    private List<CourseResponseDTO> courses;
 
-    public Student() {}
-
-    public Student(String name, String rollNumber, int marks) {
-        this.name = name;
-        this.rollNumber = rollNumber;
-        this.marks = marks;
-    }
-
-    //Getters
     public int getId() { return id; }
     public String getName() { return name; }
     public String getRollNumber() { return rollNumber; }
     public int getMarks() { return marks; }
+    public List<CourseResponseDTO> getCourses() { return courses; }
 
-    //Setters
+    public void setId(int id) { this.id = id; }
     public void setName(String name) { this.name = name; }
     public void setRollNumber(String rollNumber) { this.rollNumber = rollNumber; }
     public void setMarks(int marks) { this.marks = marks; }
+    public void setCourses(List<CourseResponseDTO> courses) { this.courses = courses; }
 }
